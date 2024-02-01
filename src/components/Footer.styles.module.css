@@ -1,0 +1,21 @@
+footer{
+    background-color: rgb(119, 149, 182);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    a{
+        color: #fff;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

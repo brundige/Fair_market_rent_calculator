@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import {BrowserRouter} from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ProRate from './components/ProRate';
+import RentCalculator from './components/RentCalculator';
+import {useState} from "react";
 function App() {
+
+        const [activeTool, setActiveTool] = useState(<RentCalculator />);
+
+        const handleToolChange = (e) => {
+            if (e.target.value === "rentCalculator") {
+                setActiveTool(<RentCalculator />);
+            } else if (e.target.value === "proRate") {
+                setActiveTool(<ProRate />);
+            }
+        }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+            <Header props={{handleToolChange:handleToolChange}} />
+            {activeTool}
+
+
+
+
+
     </div>
   );
 }
